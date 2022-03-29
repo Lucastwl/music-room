@@ -107,7 +107,7 @@ export default function CreateRoomPage(props) {
         <Grid item xs={12} align="center">
             <FormControl component="fieldset">
                 <FormHelperText>
-                    <div align='center' class="inp">
+                    <div align='center' className="inp">
                         Guest Control of Playback State
                     </div>
                 </FormHelperText>
@@ -141,7 +141,7 @@ export default function CreateRoomPage(props) {
                 onChange={handleVotesChange}
                 />
                 <FormHelperText>
-                    <div align="center" class="inp">
+                    <div align="center" className="inp">
                         Votes Required To Skip Song
                     </div>
                 </FormHelperText>

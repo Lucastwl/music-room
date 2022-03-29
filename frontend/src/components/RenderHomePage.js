@@ -25,6 +25,11 @@ export default function RenderHomePage(props) {
                     </Button>
                 </ButtonGroup>
             </Grid>
+            <Grid item xs={12} align="center">
+                <Button color="" to='/' component={ Link }>
+                    Home
+                </Button>
+            </Grid>
         </Grid>
     );
 }

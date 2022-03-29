@@ -1,49 +1,33 @@
 import React, { Component, useEffect, useState } from "react";
+import MusicHome from "./MusicHome";
+import About from "./About";
+import MainHome from "./MainHome";
+import Room from "./Room";
 import RoomJoinPage from "./RoomJoinPage";
 import CreateRoomPage from "./CreateRoomPage";
-import RenderHomePage from "./RenderHomePage";
-import Room from "./Room";
-import { Grid, Button, ButtonGroup, Typography } from "@material-ui/core";
+import TicTacToe from "./TicTacToe";
+import FplPoints from "./FplPoints";
+import { Grid, Button, ButtonGroup, Typography, Container } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link,
-  Navigate,
 } from "react-router-dom";
 
 export default function HomePage(props) {
 
-    const [roomCode, setRoomCode] = useState(null);
-
-    useEffect(() => {
-
-        setRoomCode(null);
-
-        async function fetchData() {
-            fetch('/api/user-in-room')
-            .then((res) => res.json())
-            .then((data) => {
-                setRoomCode(data.code);
-            });
-        }
-        fetchData();
-
-    },[])
-
-    function navigateToRoom() {
-        const code = roomCode;
-        // roomCode needs to be reset when navigating to avoid get loop after refreshing
-        setRoomCode(null);
-        return <Navigate replace to={`/room/${code}`} />
-    }
-
     return (
     <Router>
         <Routes>
-        <Route exact path="/" element={roomCode ? (navigateToRoom()) : (RenderHomePage())} />
+        <Route exact path="/" element={<MainHome/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/home" element={<MusicHome />} />
         <Route path="/join" element={<RoomJoinPage/>} />
         <Route path="/create" element={<CreateRoomPage/>} />
+        <Route path="/tictactoe" element={<TicTacToe/>} />
+        <Route path="/fplpoints" element={<FplPoints/>} />
         <Route path="/room/:roomCode"
             render={
                 (props) => {

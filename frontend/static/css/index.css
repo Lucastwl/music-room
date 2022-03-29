@@ -12,12 +12,12 @@ html, body {
     top: 0;
 }
 
-#app{
+/* #app{
     width: 100%;
     height: 100%;
     background-color: #28a4a4;
     color: aliceblue;
-}
+} */
 
 .center{
     position: absolute;
@@ -26,9 +26,9 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
-.inp{
+/* .inp{
     color: aliceblue;
-}
+} */
 
 #bar > * {
     background-color: darkseagreen;
@@ -38,6 +38,6 @@ html, body {
     background-color: white;
 }
 
-#joincode {
+/* #joincode {
     color: aliceblue;
-}
+} */
